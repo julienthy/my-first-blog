@@ -19,5 +19,21 @@
             <h2><a href="">Mon second est Kazakh</a></h2>
             <p>Adilkhan Yerzhanov, fierté de ce peuple fier et indomptable!</p>
         </article>
+
+        <article>
+        {{ posts }}
+
+        {% for post in posts %}
+            {{ post }}
+        {% endfor %}
+        </article>
+
+        {% for post in posts %}
+            <article>
+                <time>published: {{ post.published_date }}</time>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </article>
+        {% endfor %}
     </body>
 </html>
